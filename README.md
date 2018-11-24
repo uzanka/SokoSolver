@@ -42,11 +42,11 @@ count=168710 open=21565 visited=190098
 593 msec.
 ~~~
 
-| sample map  | runtime    | move count  |
-|:------------|-----------:|------------:|
-| sample1.txt |  595 msec. |    34 moves |
-| sample2.txt | 4868 msec. |   127 moves |
-| sample3.txt |    6 msec. |    47 moves |
+| sample map  | SokoSolver | Original    | move count  |
+|:------------|-----------:|------------:|------------:|
+| sample1.txt |  595 msec. |  1708 msec. |    34 moves |
+| sample2.txt | 4868 msec. | 12247 msec. |   127 moves |
+| sample3.txt |    6 msec. |    18 msec. |    47 moves |
 
 ## Build
 The following environment is necessary to build.
