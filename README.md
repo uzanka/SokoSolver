@@ -10,7 +10,7 @@ SokoSolver is customized followed:
 - Not used boost library, and used std::unorderd_set.
 - Use original hash method of Table.
 - Support '*' (box on goal) and '+' (player on goal) characters.
-- Check table has '#" (wall).
+- Check table has '#' (wall).
 - Matching goal tuples, and not matching goal map.
 - Maps to be checked can be specified with command line options
 
