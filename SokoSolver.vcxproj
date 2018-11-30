@@ -116,11 +116,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MovableFinder.cpp" />
     <ClCompile Include="SokoSolver.cpp" />
+    <ClCompile Include="SokoSolver2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MovableFinder.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SokoSolver.h" />
+    <ClInclude Include="SokoSolver2.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SokoSolver.rc" />
