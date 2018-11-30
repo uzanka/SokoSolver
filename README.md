@@ -19,10 +19,11 @@ SokoSolver will run on Windows (Console application).
 
 ## Usage
 ~~~
-Usage: SokoSolver.exe [-input {filename} | -stdin] [-verbose]
+Usage: SokoSolver.exe [-input {filename} | -stdin] [-verbose] [-2]
   -input    Input map from filename.
   -stdin    Input map from stdin.
   -verbose  Enable verbose mode.
+  -2        Solver type.
 ~~~
 
 Example:
@@ -42,11 +43,13 @@ count=168710 open=21565 visited=190098
 593 msec.
 ~~~
 
-| sample map  | SokoSolver | Original    | move count  |
-|:------------|-----------:|------------:|------------:|
-| sample1.txt |  595 msec. |  1708 msec. |    34 moves |
-| sample2.txt | 4868 msec. | 12247 msec. |   127 moves |
-| sample3.txt |    6 msec. |    18 msec. |    47 moves |
+| sample map  | Original    | SokoSolver  | SokoSolver2 |
+|:------------|------------:|------------:|------------:|
+| sample1.txt |  1708 msec. |   595 msec. |    79 msec. |
+| sample2.txt | 12247 msec. |  4868 msec. |    98 msec. |
+| sample3.txt |    18 msec. |     6 msec. |     0 msec. |
+| sample4.txt |     ? msec. |     ? msec. |     ? msec. |
+| sample4.txt |     ? msec. |     ? msec. | 13198 msec. |
 
 ## Build
 The following environment is necessary to build.
