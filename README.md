@@ -19,16 +19,14 @@ SokoSolver will run on Windows (Console application).
 
 ## Usage
 ~~~
-Usage: SokoSolver.exe [-input {filename} | -stdin] [-verbose] [-2]
-  -input    Input map from filename.
-  -stdin    Input map from stdin.
+Usage: SokoSolver.exe {filename} [-verbose] [-timeout {seconds}]
   -verbose  Enable verbose mode.
-  -2        Solver type.
+  -timeout  Cancel solver by timeout.
 ~~~
 
 Example:
 ~~~
-SokoSolver.exe -input sample/sample1.txt -verbose
+SokoSolver.exe -verbose sample/sample1.txt
 #######
 #     #
 #     #
@@ -37,19 +35,19 @@ SokoSolver.exe -input sample/sample1.txt -verbose
 #.$$  #
 #.#  @#
 #######
-100000: open=17115 / 17415 visited=117114
-ulULLulDDurrrddlULrruLLrrUruLLLulD
-count=168710 open=21565 visited=190098
-593 msec.
+
+(4,3,D) (4,4,L) (3,6,U) (3,5,L) (1,4,D) (2,5,U) (2,4,U) (3,2,L) (1,1,D) (4,4,L) (3,4,L) (5,5,L) (4,5,L) (3,5,L)
+count=1655 open=343 visited=1757
+12 msec.
 ~~~
 
-| sample map  | Original    | SokoSolver  | SokoSolver2 |
-|:------------|------------:|------------:|------------:|
-| sample1.txt |  1708 msec. |   595 msec. |    79 msec. |
-| sample2.txt | 12247 msec. |  4868 msec. |    98 msec. |
-| sample3.txt |    18 msec. |     6 msec. |     0 msec. |
-| sample4.txt |     ? msec. |     ? msec. |     ? msec. |
-| sample5.txt |     ? msec. |     ? msec. | 13198 msec. |
+| sample map  | Original    | Ver1        | Ver1 -2     | Ver2        |
+|:------------|------------:|------------:|------------:|------------:|
+| sample1.txt |  1708 msec. |   595 msec. |    79 msec. |    12 msec. |
+| sample2.txt | 12247 msec. |  4868 msec. |    98 msec. |    15 msec. |
+| sample3.txt |    18 msec. |     6 msec. |     0 msec. |     0 msec. |
+| sample4.txt |     ? msec. |     ? msec. |     ? msec. |     ? msec. |
+| sample5.txt |     ? msec. |     ? msec. | 13198 msec. |  2073 msec. |
 
 ## Build
 The following environment is necessary to build.
