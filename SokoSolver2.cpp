@@ -149,7 +149,8 @@ void SokoSolver2::SetupBoard(const std::string board) {
       if (ch == '@' || ch == '+') {
         px_ = static_cast<int>(x);
         py_ = static_cast<int>(y);
-      } else if (ch == '.' || ch == '*') {
+      }
+      if (ch == '.' || ch == '*' || ch == '+') {
         goals_.push_back(std::make_tuple(static_cast<int>(x), static_cast<int>(y)));
       }
     }

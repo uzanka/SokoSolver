@@ -49,7 +49,7 @@ count=168710 open=21565 visited=190098
 | sample2.txt | 12247 msec. |  4868 msec. |    98 msec. |
 | sample3.txt |    18 msec. |     6 msec. |     0 msec. |
 | sample4.txt |     ? msec. |     ? msec. |     ? msec. |
-| sample4.txt |     ? msec. |     ? msec. | 13198 msec. |
+| sample5.txt |     ? msec. |     ? msec. | 13198 msec. |
 
 ## Build
 The following environment is necessary to build.
