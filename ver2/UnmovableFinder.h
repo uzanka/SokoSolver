@@ -31,8 +31,11 @@ public:
   bool Unmovable(const Table& table, const GoalsHolder& goals, const int x, const int y);
 
 protected:
-  bool Check1(const Table& table, const GoalsHolder& goals, const int x, const int y);
-  bool Check2(const Table& table, const GoalsHolder& goals, const int x, const int y);
+  bool Check11(const Table& table, const int x, const int y);
+  bool Check21(const Table& table, const int x, const int y);
+  bool Check22(const Table& table, const int x, const int y);
+  bool Check31(const Table& table, const int x, const int y);
+  bool Check41(const Table& table, const int x, const int y);
 };
 
 #endif  // UNMOVABLE_FINDER_INCLUDED

@@ -62,7 +62,11 @@ std::string SokoSolver::Solve() {
         uint64_t elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start_).count();
         if (elapsed / 1000 >= timeout_) {
           visited_count_ = visited.size();
-          return "No solution (timeout).";
+          return "Timeout.";
+        }
+        if (visited.size() + open.size() >= 80000000) {  // about 10GB
+          visited_count_ = visited.size();
+          return "Memory overflow.";
         }
       }
     }
