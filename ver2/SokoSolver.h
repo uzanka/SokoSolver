@@ -15,6 +15,7 @@
 #include "GoalsHolder.h"
 #include "DeadzoneFinder.h"
 #include "UnmovableFinder.h"
+#include "StalemateFinder.h"
 
 class SokoSolver {
 public:
@@ -98,6 +99,7 @@ private:
   //DeadzoneFinder deadzone_;
   Table       deadzone_;
   UnmovableFinder unmovable_;
+  StalemateFinder stalemate_;
   int         width_;             //!< Map width.
   int         height_;            //!< Map height.
   int         px_;                //!< Player initial X position.

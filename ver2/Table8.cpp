@@ -47,7 +47,7 @@ void Table8::Clear(const int value) {
 
 ///////////////////////////////////////////////////////////////////////////////
 void Table8::Set(const int x, const int y, const int value) {
-#ifdef _DEBUG
+//#ifdef _DEBUG
   if ((x < 0 || x >= width_)
    || (y < 0 || y >= height_)
    || (value < 0 || value > std::numeric_limits<int8_t>::max())) {
@@ -57,7 +57,7 @@ void Table8::Set(const int x, const int y, const int value) {
     return;
 #endif
   }
-#endif
+//#endif
 
   data_[y * width_ + x] = value;
 }

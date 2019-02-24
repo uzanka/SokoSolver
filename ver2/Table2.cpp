@@ -51,7 +51,7 @@ void Table2::Clear(const int value) {
 
 ///////////////////////////////////////////////////////////////////////////////
 void Table2::Set(const int x, const int y, const int value) {
-#ifdef _DEBUG
+//#ifdef _DEBUG
   if ((x < 0 || x >= width_)
    || (y < 0 || y >= height_)
    || (value < 0 || value > 3)) {
@@ -61,7 +61,7 @@ void Table2::Set(const int x, const int y, const int value) {
     return;
 #endif
   }
-#endif
+//#endif
 
   int index = ((y * width_ + x) * 2) / (sizeof(uint8_t) * 8);
   switch (((y * width_ + x) * 2) % (sizeof(uint8_t) * 8)) {

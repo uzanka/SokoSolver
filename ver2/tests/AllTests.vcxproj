@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{E7444BA6-471D-4D17-B2D9-A70FBEF573A9}</ProjectGuid>
-    <RootNamespace>SokoSolver</RootNamespace>
+    <ProjectGuid>{65202D98-6D36-4C63-96A2-A587BBBF49CC}</ProjectGuid>
+    <RootNamespace>AllTests</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -84,7 +84,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\CppUTest\include;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CPPUTEST;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\CppUTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CppUTestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -108,41 +114,48 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\CppUTest\include;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CPPUTEST;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>CppUTest.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DeadzoneFinder.cpp" />
-    <ClCompile Include="GoalsHolder.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MovableDrawer.cpp" />
-    <ClCompile Include="PushableFinder.cpp" />
-    <ClCompile Include="SokoSolver.cpp" />
-    <ClCompile Include="StalemateFinder.cpp" />
-    <ClCompile Include="Table2.cpp" />
-    <ClCompile Include="Table8.cpp" />
-    <ClCompile Include="TableS.cpp" />
-    <ClCompile Include="UnmovableFinder.cpp" />
+    <ClCompile Include="..\DeadzoneFinder.cpp" />
+    <ClCompile Include="..\GoalsHolder.cpp" />
+    <ClCompile Include="..\MovableDrawer.cpp" />
+    <ClCompile Include="..\PushableFinder.cpp" />
+    <ClCompile Include="..\SokoSolver.cpp" />
+    <ClCompile Include="..\StalemateFinder.cpp" />
+    <ClCompile Include="..\Table2.cpp" />
+    <ClCompile Include="..\Table8.cpp" />
+    <ClCompile Include="..\TableS.cpp" />
+    <ClCompile Include="..\UnmovableFinder.cpp" />
+    <ClCompile Include="AllTests.cpp" />
+    <ClCompile Include="UnmovableFinder1Test.cpp" />
+    <ClCompile Include="UnmovableFinder2Test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DeadzoneFinder.h" />
-    <ClInclude Include="GoalsHolder.h" />
-    <ClInclude Include="MovableDrawer.h" />
-    <ClInclude Include="PushableFinder.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="SokoSolver.h" />
-    <ClInclude Include="StalemateFinder.h" />
-    <ClInclude Include="Table.h" />
-    <ClInclude Include="Table2.h" />
-    <ClInclude Include="Table8.h" />
-    <ClInclude Include="TableS.h" />
-    <ClInclude Include="UnmovableFinder.h" />
+    <ClInclude Include="..\DeadzoneFinder.h" />
+    <ClInclude Include="..\GoalsHolder.h" />
+    <ClInclude Include="..\MovableDrawer.h" />
+    <ClInclude Include="..\PushableFinder.h" />
+    <ClInclude Include="..\resource.h" />
+    <ClInclude Include="..\SokoSolver.h" />
+    <ClInclude Include="..\StalemateFinder.h" />
+    <ClInclude Include="..\Table.h" />
+    <ClInclude Include="..\Table2.h" />
+    <ClInclude Include="..\Table8.h" />
+    <ClInclude Include="..\TableS.h" />
+    <ClInclude Include="..\UnmovableFinder.h" />
+    <ClInclude Include="AllTests.h" />
+    <ClInclude Include="BoardCreator.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="SokoSolver.rc" />
+    <ResourceCompile Include="..\SokoSolver.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

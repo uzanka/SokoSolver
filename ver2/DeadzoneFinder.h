@@ -6,16 +6,30 @@
 #include "Table.h"
 #include "GoalsHolder.h"
 
+///////////////////////////////////////////////////////////////////////////////
 class Pattern {
 public:
+  /*!
+   * @brief Contructor
+   */
   Pattern() {}
+
+  /*!
+   * @brief Destructor
+   */
   virtual ~Pattern() {}
 
+  /*!
+   * @brief Add position.
+   * @param[in] position tuple(x, y, value)
+   * @details
+   * Add check position to map.
+   */
   void Add(std::tuple<int, int, int> position) {
     positions_.push_back(position);
   }
 
-  std::vector<std::tuple<int, int, int>> positions_;
+  std::vector<std::tuple<int, int, int>> positions_;  //!< (x, y, value)
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -64,6 +78,7 @@ protected:
   void Type61();
   void Type71();
   void Type81();
+  void Type91();
 
 protected:
   std::vector<Pattern> patterns_;

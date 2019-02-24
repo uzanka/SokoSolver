@@ -2,6 +2,8 @@
 #include "GoalsHolder.h"
 
 GoalsHolder::GoalsHolder() {
+  width_ = 0;
+  height_ = 0;
 }
 
 GoalsHolder::~GoalsHolder() {
@@ -10,6 +12,13 @@ GoalsHolder::~GoalsHolder() {
 void GoalsHolder::Clear() {
   goals_.clear();
   goal_xy_.clear();
+  width_ = 0;
+  height_ = 0;
+}
+
+void GoalsHolder::Size(const int width, const int height) {
+  width_ = width;
+  height_ = height;
 }
 
 void GoalsHolder::Add(const int x, const int y) {
@@ -18,6 +27,10 @@ void GoalsHolder::Add(const int x, const int y) {
 }
 
 bool GoalsHolder::Goal(const int x, const int y) const {
+  if ((x < 0) || (y < 0)
+   || (x >= width_) || (y >= height_)) {
+    return false;
+  }
   return goals_.find(GetMapKey(x, y)) != goals_.end();
 }
 

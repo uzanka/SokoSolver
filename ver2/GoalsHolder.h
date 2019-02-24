@@ -24,6 +24,7 @@ public:
 
   void Clear();
 
+  void Size(const int width, const int height);
   void Add(const int x, const int y);
 
   bool Goal(const int x, const int y) const;
@@ -38,6 +39,8 @@ protected:
 protected:
   std::vector<std::tuple<int, int>> goal_xy_;
   std::map<int, int> goals_;
+  int width_;
+  int height_;
 };
 
 #endif  // GOALS_HOLDER_INCLUDED

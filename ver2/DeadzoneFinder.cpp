@@ -18,6 +18,7 @@ DeadzoneFinder::DeadzoneFinder() {
   Type61();
   Type71();
   Type81();
+  Type91();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -990,5 +991,112 @@ void DeadzoneFinder::Type81() {
   pattern4.Add(std::tuple<int, int, int>(0, 6, kSpace));
   pattern4.Add(std::tuple<int, int, int>(0, 7, kSpace));
   pattern4.Add(std::tuple<int, int, int>(0, 8, kSpace));
+  Add(pattern4);
+}
+
+///////////////////////////////////////////////////////////////////////////////
+void DeadzoneFinder::Type91() {
+  // #xxxxxxxxx#  ?#  ?#########?  #?
+  // ?#########?  #x  #xxxxxxxxx#  x#
+  //              #x               x#
+  //              #x               x#
+  //              #x               x#
+  //              #x               x#
+  //              #x               x#
+  //              #x               x#
+  //              #x               x#
+  //              #x               x#
+  //              ?#               #?
+
+  Pattern pattern1;
+  pattern1.Add(std::tuple<int, int, int>(0, 0, kWall));
+  pattern1.Add(std::tuple<int, int, int>(10, 0, kWall));
+  pattern1.Add(std::tuple<int, int, int>(1, 1, kWall));
+  pattern1.Add(std::tuple<int, int, int>(2, 1, kWall));
+  pattern1.Add(std::tuple<int, int, int>(3, 1, kWall));
+  pattern1.Add(std::tuple<int, int, int>(4, 1, kWall));
+  pattern1.Add(std::tuple<int, int, int>(5, 1, kWall));
+  pattern1.Add(std::tuple<int, int, int>(6, 1, kWall));
+  pattern1.Add(std::tuple<int, int, int>(7, 1, kWall));
+  pattern1.Add(std::tuple<int, int, int>(8, 1, kWall));
+  pattern1.Add(std::tuple<int, int, int>(9, 1, kWall));
+  pattern1.Add(std::tuple<int, int, int>(1, 0, kSpace));
+  pattern1.Add(std::tuple<int, int, int>(2, 0, kSpace));
+  pattern1.Add(std::tuple<int, int, int>(3, 0, kSpace));
+  pattern1.Add(std::tuple<int, int, int>(4, 0, kSpace));
+  pattern1.Add(std::tuple<int, int, int>(5, 0, kSpace));
+  pattern1.Add(std::tuple<int, int, int>(6, 0, kSpace));
+  pattern1.Add(std::tuple<int, int, int>(7, 0, kSpace));
+  pattern1.Add(std::tuple<int, int, int>(8, 0, kSpace));
+  pattern1.Add(std::tuple<int, int, int>(9, 0, kSpace));
+  Add(pattern1);
+
+  Pattern pattern2;
+  pattern2.Add(std::tuple<int, int, int>(1, 0, kWall));
+  pattern2.Add(std::tuple<int, int, int>(0, 1, kWall));
+  pattern2.Add(std::tuple<int, int, int>(0, 2, kWall));
+  pattern2.Add(std::tuple<int, int, int>(0, 3, kWall));
+  pattern2.Add(std::tuple<int, int, int>(0, 4, kWall));
+  pattern2.Add(std::tuple<int, int, int>(0, 5, kWall));
+  pattern2.Add(std::tuple<int, int, int>(0, 6, kWall));
+  pattern2.Add(std::tuple<int, int, int>(0, 7, kWall));
+  pattern2.Add(std::tuple<int, int, int>(0, 8, kWall));
+  pattern2.Add(std::tuple<int, int, int>(0, 9, kWall));
+  pattern2.Add(std::tuple<int, int, int>(1, 10, kWall));
+  pattern2.Add(std::tuple<int, int, int>(1, 1, kSpace));
+  pattern2.Add(std::tuple<int, int, int>(1, 2, kSpace));
+  pattern2.Add(std::tuple<int, int, int>(1, 3, kSpace));
+  pattern2.Add(std::tuple<int, int, int>(1, 4, kSpace));
+  pattern2.Add(std::tuple<int, int, int>(1, 5, kSpace));
+  pattern2.Add(std::tuple<int, int, int>(1, 6, kSpace));
+  pattern2.Add(std::tuple<int, int, int>(1, 7, kSpace));
+  pattern2.Add(std::tuple<int, int, int>(1, 8, kSpace));
+  pattern2.Add(std::tuple<int, int, int>(1, 9, kSpace));
+  Add(pattern2);
+
+  Pattern pattern3;
+  pattern3.Add(std::tuple<int, int, int>(1, 0, kWall));
+  pattern3.Add(std::tuple<int, int, int>(2, 0, kWall));
+  pattern3.Add(std::tuple<int, int, int>(3, 0, kWall));
+  pattern3.Add(std::tuple<int, int, int>(4, 0, kWall));
+  pattern3.Add(std::tuple<int, int, int>(5, 0, kWall));
+  pattern3.Add(std::tuple<int, int, int>(6, 0, kWall));
+  pattern3.Add(std::tuple<int, int, int>(7, 0, kWall));
+  pattern3.Add(std::tuple<int, int, int>(8, 0, kWall));
+  pattern3.Add(std::tuple<int, int, int>(9, 0, kWall));
+  pattern3.Add(std::tuple<int, int, int>(0, 1, kWall));
+  pattern3.Add(std::tuple<int, int, int>(10, 1, kWall));
+  pattern3.Add(std::tuple<int, int, int>(1, 1, kSpace));
+  pattern3.Add(std::tuple<int, int, int>(2, 1, kSpace));
+  pattern3.Add(std::tuple<int, int, int>(3, 1, kSpace));
+  pattern3.Add(std::tuple<int, int, int>(4, 1, kSpace));
+  pattern3.Add(std::tuple<int, int, int>(5, 1, kSpace));
+  pattern3.Add(std::tuple<int, int, int>(6, 1, kSpace));
+  pattern3.Add(std::tuple<int, int, int>(7, 1, kSpace));
+  pattern3.Add(std::tuple<int, int, int>(8, 1, kSpace));
+  pattern3.Add(std::tuple<int, int, int>(9, 1, kSpace));
+  Add(pattern3);
+
+  Pattern pattern4;
+  pattern4.Add(std::tuple<int, int, int>(0, 0, kWall));
+  pattern4.Add(std::tuple<int, int, int>(1, 1, kWall));
+  pattern4.Add(std::tuple<int, int, int>(1, 2, kWall));
+  pattern4.Add(std::tuple<int, int, int>(1, 3, kWall));
+  pattern4.Add(std::tuple<int, int, int>(1, 4, kWall));
+  pattern4.Add(std::tuple<int, int, int>(1, 5, kWall));
+  pattern4.Add(std::tuple<int, int, int>(1, 6, kWall));
+  pattern4.Add(std::tuple<int, int, int>(1, 7, kWall));
+  pattern4.Add(std::tuple<int, int, int>(1, 8, kWall));
+  pattern4.Add(std::tuple<int, int, int>(1, 9, kWall));
+  pattern4.Add(std::tuple<int, int, int>(0, 10, kWall));
+  pattern4.Add(std::tuple<int, int, int>(0, 1, kSpace));
+  pattern4.Add(std::tuple<int, int, int>(0, 2, kSpace));
+  pattern4.Add(std::tuple<int, int, int>(0, 3, kSpace));
+  pattern4.Add(std::tuple<int, int, int>(0, 4, kSpace));
+  pattern4.Add(std::tuple<int, int, int>(0, 5, kSpace));
+  pattern4.Add(std::tuple<int, int, int>(0, 6, kSpace));
+  pattern4.Add(std::tuple<int, int, int>(0, 7, kSpace));
+  pattern4.Add(std::tuple<int, int, int>(0, 8, kSpace));
+  pattern4.Add(std::tuple<int, int, int>(0, 9, kSpace));
   Add(pattern4);
 }

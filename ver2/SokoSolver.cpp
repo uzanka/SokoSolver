@@ -50,13 +50,13 @@ std::string SokoSolver::Solve() {
     std::string current_solution = std::get<1>(open.front());
     open.pop();
 
-    if (looped_count_ % 100000 == 0) {
-      if (verbose_) {
-        std::cout << std::to_string(looped_count_) + ": open=" + std::to_string(open.size()) + " / " + std::to_string(max_opened_count_) + " visited=" + std::to_string(visited.size()) << std::endl;
-        //print_map(current_map);
-      }
-    }
     if (looped_count_ % 100 == 0) {
+      if (looped_count_ % 100000 == 0) {
+        if (verbose_) {
+          std::cout << std::to_string(looped_count_) + ": open=" + std::to_string(open.size()) + " / " + std::to_string(max_opened_count_) + " visited=" + std::to_string(visited.size()) << std::endl;
+          //print_map(current_map);
+        }
+      }
       if (timeout_ > 0) {
         std::chrono::system_clock::time_point end = std::chrono::system_clock::now();
         uint64_t elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start_).count();
@@ -64,7 +64,7 @@ std::string SokoSolver::Solve() {
           visited_count_ = visited.size();
           return "Timeout.";
         }
-        if (visited.size() + open.size() >= 80000000) {  // about 10GB
+        if (visited.size() + open.size() >= 600000000) {  // about 10GB
           visited_count_ = visited.size();
           return "Memory overflow.";
         }
@@ -82,12 +82,11 @@ std::string SokoSolver::Solve() {
       int x = std::get<0>(xyv);
       int y = std::get<1>(xyv);
       int v = std::get<2>(xyv);
-
-      Table temp(current_map);
       int dx = std::get<0>(dirs_[v]);
       int dy = std::get<1>(dirs_[v]);
 
-      if (temp.Get(x + dx, y + dy) == kBox) {
+      if (current_map.Get(x + dx, y + dy) == kBox) {
+        Table temp(current_map);
         if (Push(temp, x, y, dx, dy)) {
           //print_map(temp);
           if (goals_.Solved(temp)) {
@@ -97,13 +96,15 @@ std::string SokoSolver::Solve() {
           }
           if (deadzone_.Get(x + dx * 2, y + dy * 2) != kWall) {
             if (!unmovable_.Unmovable(temp, goals_, x + dx * 2, y + dy * 2)) {
-              Table next_table(temp);
-              MovableDrawer::DrawRecursive(next_table, x + dx, y + dy);
-              //print_map(next_table);
-              if (visited.find(next_table) == visited.end()) {
-                std::string sol = "(" + std::to_string(x) + "," + std::to_string(y) + "," + std::get<3>(dirs_[v]) + ") ";
-                open.push(std::make_tuple(next_table, current_solution + sol));
-                visited.insert(next_table);
+              if (!stalemate_.Stalemate(temp, x + dx * 2, y + dy * 2)) {
+                Table next_table(temp);
+                MovableDrawer::DrawRecursive(next_table, x + dx, y + dy);
+                //print_map(next_table);
+                if (visited.find(next_table) == visited.end()) {
+                  std::string sol = "(" + std::to_string(x) + "," + std::to_string(y) + "," + std::get<3>(dirs_[v]) + ") ";
+                  open.push(std::make_tuple(next_table, current_solution + sol));
+                  visited.insert(next_table);
+                }
               }
             }
           }
@@ -136,6 +137,7 @@ void SokoSolver::SetupBoard(const std::vector<std::string>& board) {
   };
 
   goals_.Clear();
+  goals_.Size(width_, height_);
   initial_map_ = Table(width_, height_);
   px_ = 0;
   py_ = 0;
@@ -156,6 +158,7 @@ void SokoSolver::SetupBoard(const std::vector<std::string>& board) {
   DeadzoneFinder deadzone;
   deadzone.Initialize(initial_map_, goals_, deadzone_);
   //print_map(deadzone_);
+  stalemate_.Setup(initial_map_, goals_);
 }
 
 ///////////////////////////////////////////////////////////////////////////////

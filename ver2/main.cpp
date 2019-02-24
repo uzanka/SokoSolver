@@ -82,10 +82,19 @@ int main(int argc, char** argv) {
   std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
 
   SokoSolver solver(board, verbose, timeout);
-  std::cout << solver.Solve() << std::endl;
+  std::string answer;
+  try {
+    answer = solver.Solve();
+    std::cout << answer << std::endl;
+  } catch (std::exception& exc) {
+    std::cout << "Exception: " + std::string(exc.what()) << std::endl;
+  }
 
   //if (verbose) {
     std::cout << "count=" + std::to_string(solver.LoopedCount()) + " open=" + std::to_string(solver.MaxOpenedCount()) + " visited=" + std::to_string(solver.VisitedCount()) << std::endl;
+    if (answer.substr(0, 1) == "(") {
+      std::cout << "Push=" + std::to_string(std::count(answer.begin(), answer.end(), '(')) << std::endl;
+    }
   //}
 
   std::chrono::system_clock::time_point end = std::chrono::system_clock::now();

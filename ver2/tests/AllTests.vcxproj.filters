@@ -13,82 +13,97 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="tests">
+      <UniqueIdentifier>{7eaa0d4e-503b-4be4-9d0c-fac791db4b8b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="AllTests.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StalemateFinder.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Table2.cpp">
+    <ClCompile Include="..\Table2.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Table8.cpp">
+    <ClCompile Include="..\Table8.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SokoSolver.cpp">
+    <ClCompile Include="..\TableS.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="MovableDrawer.cpp">
+    <ClCompile Include="..\UnmovableFinder.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="PushableFinder.cpp">
+    <ClCompile Include="..\DeadzoneFinder.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="UnmovableFinder.cpp">
+    <ClCompile Include="..\GoalsHolder.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GoalsHolder.cpp">
+    <ClCompile Include="..\MovableDrawer.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="TableS.cpp">
+    <ClCompile Include="..\PushableFinder.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="DeadzoneFinder.cpp">
+    <ClCompile Include="..\SokoSolver.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="StalemateFinder.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="UnmovableFinder1Test.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+    <ClCompile Include="UnmovableFinder2Test.cpp">
+      <Filter>tests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Table2.h">
+    <ClInclude Include="AllTests.h">
+      <Filter>tests</Filter>
+    </ClInclude>
+    <ClInclude Include="..\UnmovableFinder.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Table8.h">
+    <ClInclude Include="..\TableS.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="MovableDrawer.h">
+    <ClInclude Include="..\Table8.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SokoSolver.h">
+    <ClInclude Include="..\Table2.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="PushableFinder.h">
+    <ClInclude Include="..\Table.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="UnmovableFinder.h">
+    <ClInclude Include="..\StalemateFinder.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GoalsHolder.h">
+    <ClInclude Include="..\DeadzoneFinder.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Table.h">
+    <ClInclude Include="..\GoalsHolder.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="TableS.h">
+    <ClInclude Include="..\MovableDrawer.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="DeadzoneFinder.h">
+    <ClInclude Include="..\PushableFinder.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="..\resource.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="StalemateFinder.h">
+    <ClInclude Include="..\SokoSolver.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardCreator.h">
+      <Filter>tests</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="SokoSolver.rc">
+    <ResourceCompile Include="..\SokoSolver.rc">
       <Filter>リソース ファイル</Filter>
     </ResourceCompile>
   </ItemGroup>
