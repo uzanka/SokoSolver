@@ -58,3 +58,18 @@ Debug mode is very slow.
 
 # License
 GNU General Public License v3.0
+
+# Results
+Statistics of this solver program. Sample maps is "https://www.sourcecode.se/sokoban/levels".
+
+- Map size = max(width, height)
+
+![image](./results/sizes.png)
+
+- Movable spaces
+
+![image](./results/spaces.png)
+
+- Boxes
+
+![image](./results/boxes.png)
