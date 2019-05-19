@@ -64,7 +64,7 @@ Statistics of this solver program. Sample maps is "https://www.sourcecode.se/sok
 
 - Map size = max(width, height)
 
-![image](./results/sizes.png)
+![image](./results/size.png)
 
 - Movable spaces
 
