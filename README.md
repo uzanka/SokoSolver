@@ -61,6 +61,7 @@ GNU General Public License v3.0
 
 # Results
 Statistics of this solver program. Sample maps is "https://www.sourcecode.se/sokoban/levels".
+Solver program timeout is 180 seconds.
 
 - Map size = max(width, height)
 
